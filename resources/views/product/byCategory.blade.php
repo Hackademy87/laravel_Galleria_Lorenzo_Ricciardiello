@@ -15,12 +15,13 @@
             </div>
 
         </div>
-
-        <div class="row my-3">
+    </div>
+<div class="container">
+        <div class="row">
 
             @foreach($category->products as $product)
 
-                <div class="col-12 col-md-4">
+                <div class="col-12 col-md-6">
 
                     <x-cards :product="$product" />
 
@@ -31,5 +32,9 @@
         </div>
 
     </div>
+
+
+
+
 
 </x-layout>

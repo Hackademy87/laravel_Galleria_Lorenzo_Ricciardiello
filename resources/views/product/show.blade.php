@@ -56,13 +56,18 @@
             </div>
 
             <div class="row">
+
                 <div class="col-6">
-                    <h2>Artista :</h2>
+
+                <h2>Artisti :</h2>
+
                 </div>
-                <div class="col-6">
-                    <h2>Artista</h2>
+
+                <div>
+
+                <h2>{{$product->getArtists()}}</h2>
+
                 </div>
-            </div>
 
         </div>
     </div>

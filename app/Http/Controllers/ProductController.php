@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Artist;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -29,10 +30,10 @@ class ProductController extends Controller
      * Show the form for creating a new resource.
      */
     public function create(){
-
         $categories = Category::all();
+        $artists = Artist::all();
 
-        return view('product.create',compact('categories'));
+        return view('product.create',compact('categories','artists'));
        }
 
 
@@ -41,7 +42,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        Product::create([
+      $product = Product::create([
             'name'=>$request->input('name'),
             'price'=>$request->input('price'),
             'category_id'=>$request->input('category_id'),
@@ -53,6 +54,16 @@ class ProductController extends Controller
         // return redirect()->route('product.create')->with('message','AGGIUNGERE IMMAGINE');
 
         //     }
+
+         $artists = $request->input('artistId');
+
+          foreach($artists as $artist){
+        $product->artists()->attach($artist);
+
+
+
+
+        }
 
 
      return redirect()->route('product.create')->with('message','Prodotto aggiunto con successo');

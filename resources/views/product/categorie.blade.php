@@ -24,11 +24,25 @@
 
 
 
-@foreach($products as $product)
 
-<x-card :product=$product></x-card>
 
-@endforeach
+<div class="container">
+
+    <div class="row">
+
+        @foreach($products as $product)
+
+        <div class="col-12 col-md-3">
+
+        <a style="text-decoration: none;" href="{{route('product.show',$product)}}"><x-cards  :product=$product></x-cards></a>
+
+        </div>
+
+        @endforeach
+
+    </div>
+
+</div>
 
 
 

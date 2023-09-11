@@ -107,6 +107,11 @@
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>
+                                    <form action="{{route('user.delete', compact('user'))}}" method="POST">
+                                        @method('DELETE')
+                                        @csrf
+                                        <button type="submit" >Cancella</button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach

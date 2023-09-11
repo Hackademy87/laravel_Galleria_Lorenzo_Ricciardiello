@@ -49,4 +49,6 @@ Route::middleware(['is.admin'])->group(function () {
     Route::get('/product/create',[ProductController::class,'create'])->name('product.create');
 
     Route::delete('/product/delete/{product}',[ProductController::class,'destroy'])->name('product.delete');
+
+    Route::delete('/user/delete/{user}',[AdminController::class,'destroy'])->name('user.delete');
 });

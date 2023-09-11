@@ -17,13 +17,13 @@
 <img class="px-2 py-2" style="height:270px; width:200px;" src="{{ Storage::url($product->img)}}" alt="">
 <div class="card-body text-center">
 <h5 class="card-title">{{$product->name}}</h5>
-<p class="card-text">Artista</p>
 <a href="{{ route('product.bycategory', $product->category) }}">
 @if($product->category)
 <p>{{ $product->category->name }}</p>
 @else
 <p>Senza Categoria</p></a>
 @endif
+<p>{{$product->getArtists()}}</p>
 <p class="card-text">{{$product->price}}€</p>
 </div>
 </div>
