@@ -1,0 +1,327 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+
+*{
+    font-family: monospace;
+    text-decoration: none;
+}
+
+:root{
+    :root{
+        --col1: rgb(12, 12, 12);
+        --col2: rgb(70, 70, 70);
+        --col3:  rgb(197, 195, 195);
+     }
+
+}
+
+
+.bg-1{
+    background-color: var(--col1) !important;
+}
+
+.bg-2{
+    background-color: var(--col2) !important;
+}
+
+.bg-3{
+    background-color: var(--col3) !important;
+}
+
+/*! NAVBAR */
+
+
+
+.navbar-btn {
+    margin-right: 10px;
+    background-color: burlywood;
+  }
+
+.navbar{
+    font-size: large;
+    background-color: transparent;
+    backdrop-filter: blur(9px) saturate(0.8);
+    height: 50px;
+}
+
+
+
+/*! VIDEO */
+
+
+.video-bg{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    opacity: 0.5;
+    z-index: 0;
+  }
+
+
+
+
+/*! SECTION */
+
+
+
+  .section{
+
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+
+  }
+
+  .title{
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-right: 25%;
+    transform: scale(1);
+    transition: all 1s cubic-bezier(.215, .61, .355, 1);
+  opacity: 0;
+  background:  linear-gradient(90deg, rgba(228,166,50,0.7092086834733893) 0%, rgba(200,139,25,1) 0%, rgba(219,147,45,0.7008053221288515) 0%);
+    -webkit-background-clip: text; /* Per rendere il testo visibile solo nelle aree del gradient */
+    background-clip: text;
+    color: transparent;
+  }
+
+
+  .section.in-page .title{
+    transform: scale(1.2);
+  opacity: 1;
+  }
+
+
+
+
+/*! CARD */
+
+
+
+  .card {
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #777;
+}
+
+
+
+/*! FORM */
+
+
+
+.my-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.my-form label {
+    font-weight: bold;
+}
+
+.my-form input[type="text"],
+.my-form input[type="number"],
+.my-form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.my-form button {
+    background-color:  burlywood;
+    color: #000000;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.my-form button:hover {
+    background-color: #ffffff;
+}
+
+
+
+
+/*! PAGINA CREATE  */
+
+
+
+.add{
+    background-color: rgba(236, 203, 161, 0.507);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(244, 220, 125, 0.1);
+    position: relative;
+    z-index: 99;
+}
+
+.add-body {
+    position: relative;
+    padding: 40px;
+    z-index: 99;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* MOSAICO IMMAGINI */
+
+.galleria {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 5vw);
+    grid-gap: 15px;
+}
+
+.galleria__immagine {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contenitore {
+    width: 60%;
+    margin: 2rem auto;
+  }
+
+  @media screen and (max-width: 500px){
+
+    .contenitore{
+    width: 100%;
+    height: 100%;
+}
+}
+
+  .galleria {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 5vw);
+    grid-gap: 1.5rem;
+  }
+
+
+
+  .galleria__elemento--1 {
+    background-image: url('https://www.artesvelata.it/wp-content/uploads/2018/10/1952-Jackson-Pollock-convergence-Arte-Svelata-Giuseppe-Nifos%C3%AC.jpg');
+    background-size: auto;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.galleria__elemento--2 {
+    background-image: url('https://www.deodato.com/pub/media/wysiwyg/quadri-contemporanei-alive-red-romero-britto.jpg');
+    background-size: auto;
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 3;
+
+}
+.galleria__elemento--3 {
+    background-image: url('https://www.deodato.com/pub/media/wysiwyg/opera-d-arte-contemporanea-picasso-deux-femmes-au-miroir.jpg');
+    background-size: auto;
+    grid-column-start: 5;
+    grid-column-end: 9;
+    grid-row-start: 1;
+    grid-row-end: 6;
+
+    animation-name: movimento;
+    animation-iteration-count:infinite ;
+    animation-duration: 10s;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
+
+.galleria__elemento--4 {
+    background-image: url('https://www.artesvelata.it/wp-content/uploads/2020/07/Lucio-Fontana-Concetto-spaziale.-Attese-1959.-Idropittura-su-tela-100-x-81-cm.-Rovereto-MART-Arte-Svelata.jpg');
+    background-size: cover;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 6;
+}
+.galleria__elemento--5 {
+    background-image: url('https://www.deodato.com/pub/media/wysiwyg/scultura-contemporanea-hippo-nazare-aga.jpg');
+    background-size: cover;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 6;
+    grid-row-end: 9;
+}
+.galleria__elemento--6 {
+    background-image: url('https://www.deodato.com/pub/media/wysiwyg/pittori-contemporanei-famosi-marc-chagalle-le-chandelier.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    grid-column-start: 5;
+    grid-column-end: 9;
+    grid-row-start: 6;
+    grid-row-end: 9;
+}
+
+
+    @keyframes movimento {
+        0% {background-position: left;};
+        100%{background-position: right;}
+
+    }
+
+
+
+    /*! DASHBOARD */
+
+    .addPro{
+        background-color: burlywood;
+        width: 150px;
+    }
