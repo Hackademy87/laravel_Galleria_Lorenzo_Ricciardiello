@@ -124,4 +124,23 @@ class ProductController extends Controller
 
         }
 
+
+    public function byCategory(Category $category){
+
+         return view('product.bycategory', compact('category'));
+
+        }
+
+    public function indexByCategory(Category $category){
+
+            $products = $category->products;
+
+        return view('product.categorie',compact('products'));
+
+        }
+
+
+
+
+
 }

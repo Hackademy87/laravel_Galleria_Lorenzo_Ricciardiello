@@ -1,3 +1,15 @@
+
+
+<style>
+    a{
+        text-decoration: none;
+    }
+    h5{
+        color: black !important
+    }
+</style>
+
+
 <section class="container mt-5" >
 <div class="row" >
 <div class="col-12 col-md-3 bordi">
@@ -6,10 +18,11 @@
 <div class="card-body text-center">
 <h5 class="card-title">{{$product->name}}</h5>
 <p class="card-text">Artista</p>
+<a href="{{ route('product.bycategory', $product->category) }}">
 @if($product->category)
 <p>{{ $product->category->name }}</p>
 @else
-<p>Senza Categoria</p>
+<p>Senza Categoria</p></a>
 @endif
 <p class="card-text">{{$product->price}}€</p>
 </div>

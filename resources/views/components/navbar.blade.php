@@ -6,8 +6,8 @@
 
 
 
-    
-    
+
+
     <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
      width="20px" height="20px" viewBox="0 0 1280.000000 1153.000000"
      preserveAspectRatio="xMidYMid meet">
@@ -1595,10 +1595,9 @@
             Dropdown
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            @foreach($productCategories as $category)
+            <li><a class="dropdown-item" href="{{route('product.bycategory',compact('category'))}}">{{$category->name}}</a></li>
+          @endforeach
           </ul>
         </li>
       </ul>

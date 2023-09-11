@@ -1,9 +1,11 @@
 <x-layout>
 
+<br>
+<br>
 
 
-<form action="{{route('product.update', $product)}}" method="POST" enctype="multipart/form-data" >
-@method('PUT')
+<form class="my-5" action="{{route('product.update', $product)}}" method="POST" enctype="multipart/form-data" >
+
 
 @csrf
 
